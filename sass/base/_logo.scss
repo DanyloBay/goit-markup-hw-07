@@ -1,0 +1,13 @@
+.page__header--logo, .footer__first--logo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+
+    color: var(--main-color);
+}
+
+.page__header--article,
+.footer__first--article {
+    color: var(--second-color);
+}
