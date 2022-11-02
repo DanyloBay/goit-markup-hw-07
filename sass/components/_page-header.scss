@@ -36,9 +36,7 @@
     padding-bottom: 32px;
     color: var(--main-color);
 
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @include transitions(color);
 }
 
 .page__header--link:hover,
@@ -84,9 +82,7 @@
     letter-spacing: 0.02em;
     color: var(--main-text-color);
 
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @include transitions(color);
 }
 
 .page__header--icon:hover,

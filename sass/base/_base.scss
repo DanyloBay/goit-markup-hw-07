@@ -18,3 +18,13 @@ img {
     padding: 0;
     list-style-type: none;
 }
+
+.text, .features__text {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+
+    color: var(--main-text-color);
+}

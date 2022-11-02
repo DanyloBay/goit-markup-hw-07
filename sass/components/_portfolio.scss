@@ -20,9 +20,7 @@
     display: block;
     position: relative;
 
-    transition-property: box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @include transitions(box-shadow);
 }
 
 .portfolio__thumb {
@@ -39,9 +37,7 @@
     height: 100%;
     transform: translateY(100%);
 
-    transition-property: transform;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @include transitions(transform);
 
 }
 
@@ -68,15 +64,14 @@
     padding: 63px 24px;
     transform: translateY(100%);
 
-    transition-property: transform, background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--overlay-color);
+
+    @include transitions(transform);
 }
 
 .portfolio__link:hover .portfolio__thumb--overlay,
 .portfolio__link:focus .portfolio__thumb--overlay {
     transform: translateY(0);
-    background-color: var(--overlay-color);
 }
 
 .portfolio__link:hover,
