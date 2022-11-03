@@ -5,6 +5,8 @@
     line-height: 1.2;
 
     color: var(--main-color);
+
+    @extend %link;
 }
 
 .page__header--article,

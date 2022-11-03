@@ -7,6 +7,8 @@
     margin-top: 16px;
 
     gap: 10px;
+
+    @extend %list;
 }
 
 .network__item {
@@ -26,15 +28,16 @@
     background-color: var(--white);
 
     border-radius: 50%;
-    transition-property: color, background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.network__icon:hover,
-.network__icon:focus {
-    color: var(--white);
-    background-color: var(--second-icon-color);
+    transition: 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: var(--white);
+        background-color: var(--second-icon-color);
+    }
 }
 
 .network__icon--web {

@@ -11,14 +11,14 @@
     @include transition-backdrop(opacity, 300ms);
     @include transition-backdrop(visibility, 300ms);
 
-}
+    &__is--hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    
+        transform: scale3d(0.1, 0.5, 1);
+    }
 
-.backdrop__is--hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transform: scale3d(0.1, 0.5, 1);
 }
 
 .modal {
@@ -32,50 +32,51 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
 
-.modal__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    background-color: var(--white);
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: var(--white);
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    
+        color: var(--black);
+    
+        position: absolute;
+        top: 8px;
+        right: 8px;
+    
+    }
+    
+    &__close--icon {
+        width: 11px;
+        height: 11px;
+        fill: currentColor;
+    
+        @include transitions(color);
 
-    color: var(--black);
+        .modal__item:hover &,
+        .modal__item:focus-visible &
+        {
+            color: var(--second-icon-color);
+        }
+    }
 
-    position: absolute;
-    top: 8px;
-    right: 8px;
-
-}
-
-.modal__item:hover .modal__close--icon,
-.modal__item:focus-visible .modal__close--icon
-{
-    color: var(--second-icon-color);
-}
-
-.modal__close--icon {
-    width: 11px;
-    height: 11px;
-    fill: currentColor;
-
-    @include transitions(color);
-}
-
-.modal__tittle
-{
-    margin-bottom: 12px;
-    margin-top: 0px;
-    padding: 0;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.15;
-    text-align: center;
-    letter-spacing: 0.03em;
-
-    color: var(--main-color);
+    
+    &__tittle
+    {
+        margin-bottom: 12px;
+        margin-top: 0px;
+        padding: 0;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.15;
+        text-align: center;
+        letter-spacing: 0.03em;
+    
+        color: var(--main-color);
+    }
 }
