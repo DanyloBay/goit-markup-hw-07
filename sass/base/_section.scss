@@ -2,7 +2,7 @@
     padding: 94px 0;
 }
 
-.section__tittle {
+.section__title {
     margin: 0;
     margin-bottom: 50px;
 
@@ -15,14 +15,14 @@
     text-align: center;
 }
 
-.section__none {
+.section__visibility-hidden {
     display: none;
 }
 
-.section__item {
+.section--no-padding-top {
     padding-top: 0;
 }
 
-.section__bg--color {
+.section--other-bg {
     background-color: var(--background-team);
 }

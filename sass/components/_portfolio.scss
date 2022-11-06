@@ -4,33 +4,40 @@
 
     @extend %list;
 
-    &__example {
+    .portfolio__item {
         width: 370px;
     }
     
-    &__example:not(:nth-child(3n)) {
+    .portfolio__item:not(:nth-child(3n)) {
         margin-right: 30px;
     }
     
-    &__example:not(:nth-last-child(-n+3)) {
+    .portfolio__item:not(:nth-last-child(-n+3)) {
         margin-bottom: 30px;
     }
     
-    &__link {
+    .portfolio__link {
         display: block;
         position: relative;
     
         @include transitions(box-shadow);
 
         @extend %link;
+
+        &:hover,
+        &:focus {
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+                0px 4px 4px rgba(0, 0, 0, 0.06),
+                1px 4px 6px rgba(0, 0, 0, 0.16);
+        }
     }
     
-    &__thumb {
+    .portfolio__thumb {
         position: relative;
         overflow: hidden;
     }
     
-    &__thumb--item::before {
+    .portfolio__thumb-item::before {
         content: "";
         position: absolute;
         top: 0;
@@ -44,12 +51,12 @@
     }
     
     
-    &__thumb--item:hover::before {
+    .portfolio__thumb-item:hover::before {
         transform: translateY(0);
     }
     
     
-    &__thumb--overlay {
+    .portfolio__thumb-overlay {
         font-weight: 400;
         font-size: 18px;
         line-height: 1.55;
@@ -71,26 +78,19 @@
         @include transitions(transform);
     }
     
-    &__link:hover &__thumb--overlay,
-    &__link:focus &__thumb--overlay {
+    .portfolio__item:hover .portfolio__thumb-overlay,
+    .portfolio__item:focus .portfolio__thumb-overlay{
         transform: translateY(0);
     }
-    
-    &__link:hover,
-    &__link:focus {
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
-            0px 4px 4px rgba(0, 0, 0, 0.06),
-            1px 4px 6px rgba(0, 0, 0, 0.16);
-    }
-    
-    &__item {
+
+    .portfolio__box {
         padding: 20px 24px;
         border-left: 1px solid var(--portfolio-border-color);
         border-right: 1px solid var(--portfolio-border-color);
         border-bottom: 1px solid var(--portfolio-border-color);
     }
     
-    &__thumb--tittle {
+    .portfolio__tittle {
         margin-top: 0;
         margin-bottom: 4px;
         font-weight: 700;

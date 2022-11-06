@@ -6,7 +6,7 @@
 
     margin-bottom: 10px;
 
-    &--label
+    .form__label
     {
         font-weight: 400;
         font-size: 12px;
@@ -18,7 +18,7 @@
         margin-bottom: 4px;
     }
 
-    &--textarea
+    .form__textarea
     {
         font-weight: 400;
         font-size: 12px;
@@ -48,7 +48,7 @@
         }
     }
 
-    &--item
+    .form__item
     {
         position: relative;
         width: 100%;
@@ -56,7 +56,7 @@
         color: var(--main-color);
     }
 
-    &--input
+    .form__input
     {
         width: 100%;
         padding: 12px 0;
@@ -80,7 +80,7 @@
         }
     }
 
-    &--icon
+    .form__icon
     {
         position: absolute;
         top: 50%;
@@ -90,14 +90,14 @@
         transform: translate(-50%, -50%);
 
         fill: currentColor;
-        @include transitions(color);
-
-        .form__field--item:hover &,
-        .form__field--input:focus-visible + &
-        {
-            color: var(--second-icon-color);
-        }
+        @include transitions(color);  
         
+    }
+
+    .form__item:hover .form__icon,
+    .form__input:focus-visible + .form__icon
+    {
+        color: var(--second-icon-color);
     }
 }
 
@@ -114,7 +114,7 @@
 
     margin-bottom: 30px;
 
-    &--checkbox
+    .form__checkbox
     {
         margin-right: 9px;
 
@@ -130,7 +130,7 @@
         position: absolute;
     }
 
-    &--icon
+    .form__check-icon
     {
         display: inline-block;
         width: 16px;
@@ -140,7 +140,7 @@
         border-radius: 4px;    
     }
 
-    .form__check--checkbox:checked + &--icon
+    .form__checkbox:checked + .form__check-icon
     {
         background-color: var(--second-color);
         border-color: var(--second-color);
@@ -150,7 +150,7 @@
         background-origin: border-box;
     }    
 
-    &--policy
+    .form__check-policy
     {
         color: var(--second-color);
         @extend %link;

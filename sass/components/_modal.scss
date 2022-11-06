@@ -7,18 +7,15 @@
 
     background-color: var(--backdrop);
 
-    @include transition-backdrop(transform, 500ms);
-    @include transition-backdrop(opacity, 300ms);
-    @include transition-backdrop(visibility, 300ms);
+    transition: transform 500ms ease, opacity 300ms ease, visibility 300ms ease;
+}
 
-    &__is--hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    
-        transform: scale3d(0.1, 0.5, 1);
-    }
+.backdrop__is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
+    transform: scale3d(0.1, 0.5, 1);
 }
 
 .modal {
@@ -33,7 +30,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    &__item {
+    .modal__button {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -44,6 +41,7 @@
         border: 1px solid rgba(0, 0, 0, 0.1);
     
         color: var(--black);
+        cursor: pointer;
     
         position: absolute;
         top: 8px;
@@ -51,22 +49,22 @@
     
     }
     
-    &__close--icon {
+    .modal__close-icon {
         width: 11px;
         height: 11px;
         fill: currentColor;
     
         @include transitions(color);
+    }
 
-        .modal__item:hover &,
-        .modal__item:focus-visible &
-        {
-            color: var(--second-icon-color);
-        }
+    .modal__button:hover .modal__close-icon,
+    .modal__button:focus-visible .modal__close-icon
+    {
+        color: var(--second-icon-color);
     }
 
     
-    &__tittle
+    .modal__tittle
     {
         margin-bottom: 12px;
         margin-top: 0px;

@@ -2,12 +2,12 @@
     border-bottom: 1px solid #ECECEC;
 }
 
-.page__header {
+.header__container {
     display: flex;
     align-items: center;
 
 
-    &--nav {
+    .header__nav {
         display: flex;
         align-items: center;
     
@@ -19,7 +19,7 @@
         color: var(--main-color);
     }
     
-    &--menu {
+    .menu {
         display: flex;
         margin-left: 93px;
     
@@ -27,12 +27,12 @@
         @extend %list;
     }
     
-    &--item:not(:last-child) {
+    .menu__item:not(:last-child) {
         margin-right: 50px;
 
     }
     
-    &--link {
+    .menu__link {
         display: block;
         padding-top: 32px;
         padding-bottom: 32px;
@@ -47,7 +47,7 @@
         }
     }
     
-    &--active {
+    .menu__link--active {
         position: relative;
         color: var(--second-color);
 
@@ -64,7 +64,7 @@
         }
     }
     
-    &--contacts {
+    .contacts {
         display: flex;
         margin-left: auto;
     
@@ -72,11 +72,11 @@
         @extend %list;
     }
     
-    &--item:not(:last-child) {
+    .contacts__item:not(:last-child) {
         margin-right: 50px;
     }
     
-    &--icon {
+    .contacts__link {
         display: flex;
         align-items: center;
     
@@ -91,29 +91,26 @@
 
         &:hover,
         &:focus {
-            color: var(--second-color)
+            color: var(--second-color);
         }
     }
     
-    .page__icon--mail, .page__icon--tel {
+    .contacts__icon{
         margin-right: 10px;
         width: 16px;
         height: 12px;
         fill: var(--header-icon-color);
+
+        @include transitions(fill);
     }
 
-    .page__icon--tel {
+    .contacts__icon--tel {
         height: 16px;
     }
 
-    
-    &--icon:hover .page__icon--mail,
-    &--icon:focus .page__icon--mail {
+    .contacts__item:hover .contacts__icon,
+    .contacts__item:focus .contacts__icon{
         fill: var(--second-color);
     }
-    
-    &--icon:hover .page__icon--tel,
-    &--icon:focus .page__icon--tel {
-        fill: var(--second-color);
-    }
+
 }

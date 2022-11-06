@@ -7,7 +7,7 @@
 
     @extend %list;
 
-    &__tittle {
+    .features__tittle {
         margin: 0;
         margin-bottom: 10px;
     
@@ -20,7 +20,7 @@
         text-transform: uppercase;
     }
 
-    &__story--item {
+    .features__box {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -33,13 +33,14 @@
         background-color: var(--background-team);
         background-position: center;
         border-radius: 4px;
+
+        &:non(:last-child) {
+            margin-right: 30px;
+        }
+    
     }
 
-    &__story--item:non(:last-child) {
-        margin-right: 30px;
-    }
-
-    &__story--icon {
+    .features__icon {
         width: 70px;
         height: 70px;
     }
